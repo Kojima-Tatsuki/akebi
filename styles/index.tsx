@@ -4,7 +4,8 @@ import Image from 'next/image'
 import React from 'react';
 import styles from '../styles/Home.module.css'
 
-
+import './common.css';
+import './index-style.css';
 import { NewsSection } from './NewsSection';
 
 function MyInput() {
@@ -42,7 +43,7 @@ function NewsTitle(props: NewsTextProps): JSX.Element {
 function AkebiNews(): JSX.Element {
   const LinkOfAkebiOfficialSite = "https://akebi-chan.jp/";
   return (<div className="akebi-news">
-    <NewsTitle titleText="布教" center />
+    <NewsTitle titleText="布教" center />:
     <MyInput />
     <NewsTitle titleText="明日ちゃんのセーラー服 NEWS" center />
     <LinkedText link={LinkOfAkebiOfficialSite} text="公式サイト"></LinkedText>
@@ -76,6 +77,19 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <Wrapper />
       </main>
+
+      <footer className={styles.footer}>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer>
     </div>
   )
 }
